@@ -1,0 +1,29 @@
+.explore{
+
+    h1{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+
+        .searchForCat{
+            background-color: aqua;
+            margin-bottom: 50px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            
+        }
+
+        .cards{
+            display: flex;
+            flex-wrap:wrap;
+            margin:-10px 0 0 -10px;
+            gap:50px;
+        }
+    }
+}

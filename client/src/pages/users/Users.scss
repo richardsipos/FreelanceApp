@@ -1,0 +1,55 @@
+.users{
+    .container{
+        
+        .gratitude{
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 80px;
+        }
+
+        .userCards{
+            display: flex;
+            flex-wrap:wrap;
+            margin:-10px 0 0 -10px;
+            gap:50px;
+
+
+            .userCard{
+                border: 1px solid black;
+
+                display: inline-block;
+                margin-left: 50px;
+                margin-right: 50px;
+                flex-grow: 1;
+                height:400px;    
+                width: 400px;//calc(100% * (1/4) - 10px - 1px);
+
+                img{
+                    border-radius: 10%;
+                    object-fit: cover;
+                    height: 300px;
+                    width: 100%;
+                }
+
+                .nameOfSeller{
+                    font-weight: 500;
+                    color:black;
+                    height: 50px;
+                    width: 100%;
+                    text-align: center;
+
+                }
+
+                .email{
+                    background-color: aqua;
+                    height: 50px;
+                    width: 100%;
+                    color: rgb(255, 140, 0);
+                    text-align: center;
+                }
+
+
+            }
+        }
+    }
+}
