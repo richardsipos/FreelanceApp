@@ -14,6 +14,7 @@ const Add = () => {
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
   const handleChange = (e) => {
+    
     dispatch({
       type: "CHANGE_INPUT",
       payload: { name: e.target.name, value: e.target.value },
@@ -44,7 +45,7 @@ const Add = () => {
       setUploading(false);
       dispatch({ type: "ADD_IMAGES", payload: { cover, images } });
     } catch (err) {
-      console.log(err);
+      console.log(err.data);
     }
   };
 
@@ -70,7 +71,8 @@ const Add = () => {
       {console.log("Failed with error: "+error)}
     }
   };
-
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(currentUser);
 
   return (
     <div className="add">
@@ -92,7 +94,6 @@ const Add = () => {
               <option value="creative">Creative</option>
               <option value="coding">Coding</option>
               <option value="teaching">Teaching</option>
-              <option value="business">Business</option>
               <option value="ai">AI related</option>
             </select>
             <div className="images">

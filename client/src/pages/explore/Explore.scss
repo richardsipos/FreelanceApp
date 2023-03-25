@@ -9,6 +9,8 @@
     .container{
         display: flex;
         flex-direction: column;
+        padding-left: 30px;
+        padding-right: 30px;
 
         .searchForCat{
             background-color: aqua;

@@ -35,7 +35,7 @@ function Users(){
                     
                   </div>
                   <div className="nameOfSeller">
-                    <h3>{user.username}</h3>
+                    <h3>{user.fullname}</h3>
                     
                     
                   </div>

@@ -6,11 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [file, setFile] = useState(null);
+  const [fileCover, setFileCover] = useState(null);
   const [user, setUser] = useState({
     username: "",
+    fullname:"",
     email: "",
     password: "",
     img: "",
+    imgCover: "",
     country: "",
     isSeller: false,
     desc: "",
@@ -33,10 +36,12 @@ function Register() {
     e.preventDefault();
 
     const url = await upload(file);
+    const urlCover = await upload(fileCover);
     try {
       await newRequest.post("/auth/register", {
         ...user,
         img: url,
+        imgCover: urlCover,
       });
       navigate("/")
     } catch (err) {
@@ -55,6 +60,13 @@ function Register() {
             placeholder="johndoe"
             onChange={handleChange}
           />
+          <label htmlFor="">Fullname</label>
+          <input
+            name="fullname"
+            type="text"
+            placeholder="Joseph Campbell"
+            onChange={handleChange}
+          />
           <label htmlFor="">Email</label>
           <input
             name="email"
@@ -66,6 +78,8 @@ function Register() {
           <input name="password" type="password" onChange={handleChange} />
           <label htmlFor="">Profile Picture</label>
           <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+          <label htmlFor="">Cover Picture</label>
+          <input type="file" onChange={(e) => setFileCover(e.target.files[0])} />
           <label htmlFor="">Country</label>
           <input
             name="country"

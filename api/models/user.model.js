@@ -16,7 +16,15 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  fullname: {
+    type: String,
+    required: true,
+  },
   img: {
+    type: String,
+    required: false,
+  },
+  imgCover: {
     type: String,
     required: false,
   },

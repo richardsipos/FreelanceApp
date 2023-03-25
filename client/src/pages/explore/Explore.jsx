@@ -11,11 +11,12 @@ import "./Explore.scss"
 
 const options = [
   { value: '',label:'All'},
+  { value: 'AI', label: 'AI' },
+  { value: 'lifestyle', label: 'Lifestyle' },
   { value: 'design', label: 'Design' },
-  { value: 'web', label: 'Development' },
-  { value: 'animation', label: 'Animation' },
-  { value: 'music', label: 'Music' },
-  { value: 'editing', label: 'Video Editing' },
+  { value: 'creative', label: 'Creative' },
+  { value: 'coding', label: 'Coding' },
+  { value: 'teaching', label: 'Teaching' }
 ]
 
 
@@ -59,9 +60,9 @@ function Explore () {
   console.log(search)
 
   
-  
 
   return (
+
     <div className="explore">
         <div className="container">
             <h1>Explore our available Gigs</h1>

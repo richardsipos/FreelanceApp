@@ -34,14 +34,15 @@ function Navbar() {
     }
   };
 
+
+
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
           <Link className="link" to="/">
-            <span className="text">fiverr</span>
+            <span className="text">freelance</span>
           </Link>
-          <span className="dot">.</span>
         </div>
         <div className="links">
           <Link className="link" to="/explore" >Explore</Link>
