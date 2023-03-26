@@ -34,11 +34,28 @@ export const intent = async (req, res, next) => {
 
 export const getOrders = async (req, res, next) => {
   try {
+    // console.log(req.isSeller)
+    // console.log(req.userId)
+    //console.log(req.data)
+    // if(req.isSeller){
+    //   const orders = await Order.find({
+    //     ...(req.isSeller ? { buyerId: req.userId } : { sellerId: req.userId } ),
+    //     isCompleted: true,
+    //   });
+    // }else{
+    //   const orders = await Order.find({
+    //     ...(req.isSeller ? { sellerId: req.userId } : { buyerId: req.userId }),
+    //     isCompleted: true,
+    //   });
+    //}
+
     const orders = await Order.find({
       ...(req.isSeller ? { sellerId: req.userId } : { buyerId: req.userId }),
       isCompleted: true,
     });
-
+    
+    //const orders = await Order.find();
+    //console.log(orders)
     res.status(200).send(orders);
   } catch (err) {
     next(err);

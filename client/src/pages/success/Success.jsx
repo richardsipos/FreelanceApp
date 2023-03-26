@@ -14,7 +14,7 @@ const Success = () => {
         await newRequest.put("/orders", { payment_intent });
         setTimeout(() => {
           navigate("/orders");
-        }, 5000);
+        }, 4000);
       } catch (err) {
         console.log(err);
       }

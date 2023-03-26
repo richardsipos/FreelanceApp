@@ -2,14 +2,14 @@ import React, {useState,useEffect} from "react";
 import "./Home.scss";
 import Featured from "../../components/featured/Featured";
 import Slide from "../../components/slide/Slide";
-import CatCard from "../../components/catCard/CatCard";
 import ProjectCard from "../../components/projectCard/ProjectCard";
 import { cards, projects } from "../../data";
 import UserCard from '../../components/userCard/UserCard';
 import { useQuery } from "@tanstack/react-query";
+import { useQueries } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Add from './../add/Add';
-import GigCard from './../../components/gigCard/GigCard';
+import GigCard from '../../components/gigCard/GigCard';
 
 //get users
 
@@ -19,61 +19,51 @@ import GigCard from './../../components/gigCard/GigCard';
 
 function Home() {
 
-  //const [stillLoading, setStillLoading]=useState(true);
-
-  const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ["users"],
-    queryFn: () =>
-      newRequest
-        .get(
-          `/users`
-        )
-        .then((res) => {
-          console.log(res);
-          return res.data;
-        }),
-  });
-
+  const [users, setUsers] = useState(0);
+  const [gigs, setGigs] = useState(0);
   
-
-  
-
-  const { isLoadingGigs, errorGigs, dataGigs } = useQuery({
-    queryKey: ["gigs"],
-    queryFn: () =>
-      newRequest
-        .get(
-          `/gigs`
-        )
-        .then((res) => {
-          console.log(res.data);
-          return res.data;
-        }),
-
-  });
-
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // useEffect(() => {
-  //   {console.log("Inside Use Effect")}
-  //   setIsLoaded(!isLoading);
-  // }, [isLoading]);
-
-  const [isLoadedGigs, setIsLoadedGigs] = useState(false);
-
-  // useEffect(() => {
-  //   {console.log("Inside Use Effect")}
-  //   setIsLoadedGigs(!isLoadedGigs);
-  // }, [isLoadedGigs]);
+  const { isLoading, error, data } = useQueries({
+    queries: [
+    {
+      queryKey: ["users"],
+      queryFn: () =>
+        newRequest
+          .get(
+            `/users`
+          )
+          .then((res) => {
+            
+            setUsers(res.data);
+            console.log(res.data);
+            return res.data;
+            
+          }),
+    },
+    {
+      queryKey: ["gigs"],
+      queryFn: () =>
+        newRequest
+          .get(
+            `/gigs`
+          )
+          .then((res) => {
+            
+            setGigs(res.data)
+            console.log(gigs);
+            return res.data;
+          }),
+    },
+  ]});
 
 
   return (
     <div className="home">
-      
       <div className="freelanceMain">
         <h1>Freelance</h1>
         <h3>~Make it happen!</h3>
       </div>
+      {/* meg gondolkozz */}
+
       <div className="explore">
         <div className="container">
           <h1>What we offer</h1>
@@ -162,25 +152,30 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* meg gondolkozz */}
       <Featured />
       <div className="exploreGigs">
         <h1>Explore a part of our gigs!</h1>
-        {/* {
-          isLoadingGigs 
+        { isLoading
           ? "loading"
-          : errorGigs
+          : error
           ? "Something went wrong!"
           :
-            <>
-              <Slide slidesToShow={5} arrowsScroll={5}>
-                {dataGigs.map((gig) => (
-                  <GigCard key={gig._id} item={gig} />
-                ))}
-              </Slide>
-            </>
-        } */}
+          <>
+            <div className="userCards">
+            {
+              gigs && <Slide slidesToShow={4} arrowsScroll={4}>
+                {gigs.map((gig) => (
+                      <GigCard key={gig._id} item={gig} /> 
+                  ))}
+              </Slide> 
+            }
+            </div>
+          </>
+        }
       </div>
-      
+
+      {/* meg tervezz */}
       <div className="features">
         <div className="container">
           <div className="item">
@@ -223,28 +218,25 @@ function Home() {
           </div>
         </div>
       </div>
+
+      {/* talan tervezel emg */}
       <div className="exploreUsers">
         <h1>Our sellers</h1>
-        {/* <Slide slidesToShow={4} arrowsScroll={4}>
-          {projects.map((card) => (
-            <ProjectCard key={card.id} card={card} />
-          ))}
-        </Slide> */}
-        {console.log("szia")}
-        {console.log(data)}
-         
-        { isLoading 
+        { isLoading
           ? "loading"
           : error
           ? "Something went wrong!"
           :
           <>
             <div className="userCards">
-              <Slide slidesToShow={4} arrowsScroll={4}>
-                {data.map((user) => (
+            {
+              users && <Slide slidesToShow={4} arrowsScroll={4}>
+                {users.map((user) => (
                         <UserCard key={user._id} user={user} /> 
                   ))}
               </Slide> 
+            }
+              
             </div>
           </>
         }
@@ -252,6 +244,7 @@ function Home() {
       
     </div>
   );
+  
 }
 
 export default Home;

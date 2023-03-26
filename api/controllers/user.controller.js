@@ -18,7 +18,8 @@ export const getUser = async (req, res, next) => {
 
 export const allUsers = async(req,res,next) => {
 
-  const  allSellers = await User.find()
+
+  const allSellers = await User.find({ isSeller: true });
   
   res.status(200).send(allSellers)  
 

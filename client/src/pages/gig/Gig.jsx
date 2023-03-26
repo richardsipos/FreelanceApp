@@ -71,11 +71,22 @@ function Gig() {
             )}
             {console.log("Help is arriving!")}
             {console.log(data)}
-            <Slider slidesToShow={1} arrowsScroll={1} className="slider">
-              {data.images.map((img) => (
-                <img key={img} src={img} alt="" />
-              ))}
-            </Slider>
+            {isLoadingUser ? (
+              "loading"
+            ) : errorUser ? (
+              "Something went wrong!"
+            ) : data.images.length>=1 ? (
+
+            
+              
+              <Slider slidesToShow={1} arrowsScroll={1} className="slider">
+                {data.images.map((img) => (
+                  <img key={img} src={img} alt="" />
+                ))}
+              </Slider>
+            )
+            :
+            "No cover picture was added by the Seller!"}
             <h2>About This Gig</h2>
             <p>{data.desc}</p>
             {isLoadingUser ? (

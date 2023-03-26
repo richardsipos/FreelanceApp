@@ -105,8 +105,8 @@ function Navbar() {
             <Link className="link menuLink" to="/explore/?cat=teaching">
               Teaching
             </Link>
-            <Link className="link menuLink" to="/explore/?=cat=business">
-              Business
+            <Link className="link menuLink" to="/explore/?cat=AI">
+              AI
             </Link>
           </div>
           <hr />

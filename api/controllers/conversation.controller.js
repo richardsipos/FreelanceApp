@@ -50,11 +50,18 @@ export const getSingleConversation = async (req, res, next) => {
 
 export const getConversations = async (req, res, next) => {
   try {
+    
     const conversations = await Conversation.find(
       req.isSeller ? { sellerId: req.userId } : { buyerId: req.userId }
     ).sort({ updatedAt: -1 });
+    //const conversations = await Conversation.find().sort({ updatedAt: -1 });
     res.status(200).send(conversations);
+    console.log("All conversations")
+    console.log(conversations)
+    console.log("All conversations")
   } catch (err) {
+    
+    console.log(err.data)
     next(err);
   }
 };

@@ -51,7 +51,7 @@ const Message = () => {
             {data.map((m) => (
               <div className={m.userId === currentUser._id ? "owner item" : "item"} key={m._id}>
                 <img
-                  src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  //src={m.userId} //ide majd jon egy kep normalisan csak megnezzem a usereket mert ez egy userid, kikeresem melyik passzol es azt odarakom.
                   alt=""
                 />
                 <p>{m.desc}</p>

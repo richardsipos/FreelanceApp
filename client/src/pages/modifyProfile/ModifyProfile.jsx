@@ -9,8 +9,6 @@ import Add from './../add/Add';
 function modifyProfile(){
 
 
-    console.log("probalkozz!")
-
     const [file, setFile] = useState(null);
     const [user, setUser] = useState({
       username: "",
@@ -67,7 +65,7 @@ function modifyProfile(){
             <div className="container">
                 <form onSubmit={handleSubmit}>
                     <div className="left">
-                    <h1>Modfiy your profile</h1>
+                    <h1>Modfiy your profile data</h1>
                     <label htmlFor="">Username</label>
                     <input
                         name="username"
@@ -96,7 +94,7 @@ function modifyProfile(){
                     <button type="submit">Register</button>
                     </div>
                     <div className="right">
-                    <h1>I want to become a seller</h1>
+                    <h1>Modify your Seller data</h1>
                     <div className="toggle">
                         <label htmlFor="">Activate the seller account</label>
                         <label className="switch">

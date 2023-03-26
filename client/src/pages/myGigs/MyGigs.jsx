@@ -13,7 +13,9 @@ function MyGigs() {
   const { isLoading, error, data } = useQuery({
     queryKey: ["myGigs"],
     queryFn: () =>
-      newRequest.get(`/gigs?userId=${currentUser.id}`).then((res) => {
+      newRequest.get(`/gigs?userId=${currentUser.id}`)
+      .then((res) => {
+        // console.log(res.data)
         return res.data;
       }),
   });
@@ -33,6 +35,7 @@ function MyGigs() {
 
   return (
     <div className="myGigs">
+      {console.log(data)}
       {isLoading ? (
         "loading"
       ) : error ? (
