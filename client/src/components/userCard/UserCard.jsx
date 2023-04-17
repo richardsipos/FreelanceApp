@@ -7,6 +7,7 @@ function UserCard ({ user }){
         <div className="coverAndProfileImg">
             <img className="coverImg" src={user.imgCover} alt="" />
             <img className="profileImg" src={user.img} alt="" />
+            
         </div>
         <div className="nameAndDesc">
             <h2>{user.fullname}</h2>

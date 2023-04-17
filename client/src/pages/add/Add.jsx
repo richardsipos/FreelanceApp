@@ -29,7 +29,6 @@ const Add = () => {
     e.target[0].value = "";
   };
 
-  //ebben van a baj valahol
   const handleUpload = async () => {
     setUploading(true);
     try {

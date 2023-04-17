@@ -10,6 +10,7 @@ import { useQueries } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Add from './../add/Add';
 import GigCard from '../../components/gigCard/GigCard';
+import { Link } from "react-router-dom";
 
 //get users
 
@@ -59,95 +60,75 @@ function Home() {
   return (
     <div className="home">
       <div className="freelanceMain">
-        <h1>Freelance</h1>
+        <h1>freelance</h1>
         <h3>~Make it happen!</h3>
       </div>
       {/* meg gondolkozz */}
 
       <div className="explore">
         <div className="container">
-          <h1>What we offer</h1>
+          <h1>Obtain the assistance of our experts in any of the <i>following</i> domains.</h1>
           <div className="items">
             <div className="item">
+              <Link className="link" to='/explore/?cat=lifestyle'>
               <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Graphics & Design</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg"
-                alt=""
-              />
-              <div className="line"></div>
-
-              <span>Digital Marketing</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Writing & Translation</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Video & Animation</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Music & Audio</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Programming & Tech</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Business</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg"
+                src="https://res.cloudinary.com/dyei5xnce/image/upload/v1681562055/freelance/SVG/lifestyleSVG_dfbjke.svg"
                 alt=""
               />
               <div className="line"></div>
               <span>Lifestyle</span>
+              </Link>
             </div>
             <div className="item">
+              <Link className="link" to='/explore/?cat=lifestyle'>
               <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg"
+                src="https://res.cloudinary.com/dyei5xnce/image/upload/v1681562055/freelance/SVG/designSVG_hl1dxc.svg"
                 alt=""
               />
               <div className="line"></div>
-              <span>Data</span>
+
+              <span>Design</span>
+              </Link>
             </div>
             <div className="item">
+              <Link  className="link" to='/explore/?cat=lifestyle'>
               <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/photography.01cf943.svg"
+                src="https://res.cloudinary.com/dyei5xnce/image/upload/v1681562055/freelance/SVG/creativeSVG_rpqbrx.svg"
                 alt=""
               />
               <div className="line"></div>
-              <span>Photography</span>
+              <span>Creative</span>
+              </Link>
+            </div>
+            <div className="item">
+              <Link className="link" to='/explore/?cat=lifestyle'>
+              <img
+                src="https://res.cloudinary.com/dyei5xnce/image/upload/v1681562055/freelance/SVG/codingSVG_drsbhd.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Coding</span>
+              </Link>
+            </div>
+            <div className="item">
+              <Link className="link" to='/explore/?cat=lifestyle'>
+              <img
+                src="https://res.cloudinary.com/dyei5xnce/image/upload/v1681562096/freelance/SVG/teacherSVG_swwc6i.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Teacher</span>
+              </Link>
+            </div>
+            <div className="item">
+              <Link className="link" to='/explore/?cat=lifestyle'>
+              <img
+                src="https://res.cloudinary.com/dyei5xnce/image/upload/v1681562055/freelance/SVG/brainSVG2_mfa0kl.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>AI</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -182,35 +163,31 @@ function Home() {
             <h1>About ourselves</h1>
             <div className="title">
               <img src="./img/check.png" alt="" />
-              The best for every budget
+              Budget friendly
             </div>
             <p>
-              Find high-quality services at every price point. No hourly rates,
-              just project-based pricing.
+              The reason for the low cost is attributed to the absence of any third-party intermediary between yourself and the sellers.
             </p>
             <div className="title">
               <img src="./img/check.png" alt="" />
-              Quality work done quickly
+              Trustworthy experts
             </div>
             <p>
-              Find the right freelancer to begin working on your project within
-              minutes.
+              Our sellers are experienced people. Who are looking forward to being challenged.
             </p>
             <div className="title">
               <img src="./img/check.png" alt="" />
-              Protected payments, every time
+              Reliability
             </div>
             <p>
-              Always know what you'll pay upfront. Your payment isn't released
-              until you approve the work.
+              Familiarize with payment terms; payment released upon project acceptance.
             </p>
             <div className="title">
               <img src="./img/check.png" alt="" />
-              24/7 support
+              All day long customer asistence
             </div>
             <p>
-              Find high-quality services at every price point. No hourly rates,
-              just project-based pricing.
+              We leave no problem unsolved, striving to provide comprehensive client assistance.
             </p>
           </div>
           <div className="item">
@@ -218,30 +195,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {/* talan tervezel emg */}
-      <div className="exploreUsers">
-        <h1>Our sellers</h1>
-        { isLoading
-          ? "loading"
-          : error
-          ? "Something went wrong!"
-          :
-          <>
-            <div className="userCards">
-            {
-              users && <Slide slidesToShow={4} arrowsScroll={4}>
-                {users.map((user) => (
-                        <UserCard key={user._id} user={user} /> 
-                  ))}
-              </Slide> 
-            }
-              
-            </div>
-          </>
-        }
-      </div>
-      
     </div>
   );
   

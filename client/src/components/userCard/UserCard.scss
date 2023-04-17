@@ -1,6 +1,6 @@
 .userCard {
-    width: 252px;
-    height: 344px;
+    width: 324px;
+    height: 400px;
     color: white;
     border-radius: 5px;
     position: relative;
@@ -11,8 +11,8 @@
     flex-direction: column;
   
     .coverAndProfileImg{
-      width: 252px;
-      height: 252px;
+      width: 324px;
+      height: 300px;
       display: flex;
       align-items: center;
       text-align: center;
@@ -20,52 +20,61 @@
       border: 1px solid gray;
       box-shadow: 5px 10px;
       .coverImg{
-        width: 252px;
-        height: 252px;
+        width: 324px;
+        height: 300px;
         position: absolute;
         top: 0;
         left: 0;
       }
 
       .profileImg{
-        
+      
         position: absolute;
-        padding-top: 15%;
+        // padding-top: 15%;
         top:0;
-        left: 15%;
-        width: 180px;
-        height: 180px;
+        // left: 15%;
+        width: 100%;
+        height: 100%;
+        // width: 180px;
+        // height: 180px;
         z-index: 1;
         border-radius: 100%;
+        
       }
+
+      
     }
 
     .nameAndDesc{
       font-size: small;
-      width: 242px;
-      height: 10px;
+      width: 324px;
+      height: 100px;
       color:black;
       text-align: center;
       position: relative;
       display: flex;
       flex-direction: column;
+      margin:2px;
       h2{
         //position: absolute;
-        font-family: 'Courier New', Courier, monospace;
-        padding-bottom: 10px;
-        padding-top: 10px;
+        font-family: "Times New Roman", Times, serif;
+        padding-bottom: 5px;
+        padding-top: 5px;
       }
 
       h6{
-        font-family: 'Courier New', Courier, monospace;
+        font-family: "Times New Roman", Times, serif;
         text-align: end;
         position: relative;
-        top: 30px;
+        top: 10px;
+        margin-right: 10px;
       }
 
       p{
-
-        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-family: "Times New Roman", Times, serif;
       }
     }
 

@@ -48,34 +48,6 @@ export const login = async (req, res, next) => {
   }
 };
 
-// export const modifyProfile = async(req,res,next) => {
-//   console.log("modifyProfile Before tryctach")
-//   try{
-//     let user = await User.findOne({username:req.body.username});
-//     if (!user) return next(createError(404, "User not found!"));
-
-//     const isCorrect = bcrypt.compareSync(req.body.password, user.password);
-//     if (!isCorrect)
-//       return next(createError(400, "Wrong password or username!"));
-    
-
-
-//     await User.findByIdAndUpdate(user._id,{isSeller:req.body.isSeller})
-//     res.status(201).send("User has been modified.");
-
-//     res
-//     .clearCookie("accessToken", {
-//       sameSite: "none",
-//       secure: true,
-//     })
-//     .status(200)
-//     .send("User has been logged out.");
-
-//   }catch(err){
-//     next(err);
-//   }
-// }
-
 export const modifyProfile = async(req,res,next) => {
   
   try{
